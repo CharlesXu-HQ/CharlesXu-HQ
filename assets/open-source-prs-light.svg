@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="394" viewBox="0 0 1000 394">
+<title>Merged open-source pull requests by project</title><desc>kvcache-ai/Mooncake: 2 merged PRs; antgroup/vsag: 1 merged PRs; areal-project/AReaL: 1 merged PRs; inclusionAI/Avernet: 1 merged PRs; sgl-project/sglang: 1 merged PRs; sgl-project/SpecForge: 1 merged PRs</desc>
+<rect x="0.5" y="0.5" width="999" height="393" rx="14" fill="#ffffff" stroke="#d0d7de"/>
+<g font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif">
+<text x="28" y="40" font-size="25" font-weight="700" fill="#1f2328">Merged open-source PRs / 已合并的开源 PR</text>
+<text x="28" y="68" font-size="15" fill="#59636e">External projects ranked by merged PRs / 按已合并 PR 数排序</text>
+<text x="28" y="126" font-size="16" fill="#1f2328">kvcache-ai/Mooncake</text>
+<rect x="292" y="108" width="560" height="24" rx="5" fill="#0969da"/>
+<text x="971" y="126" text-anchor="end" font-size="16" font-weight="600" fill="#1f2328">2</text>
+<text x="28" y="170" font-size="16" fill="#1f2328">antgroup/vsag</text>
+<rect x="292" y="152" width="280" height="24" rx="5" fill="#0969da"/>
+<text x="971" y="170" text-anchor="end" font-size="16" font-weight="600" fill="#1f2328">1</text>
+<text x="28" y="214" font-size="16" fill="#1f2328">areal-project/AReaL</text>
+<rect x="292" y="196" width="280" height="24" rx="5" fill="#0969da"/>
+<text x="971" y="214" text-anchor="end" font-size="16" font-weight="600" fill="#1f2328">1</text>
+<text x="28" y="258" font-size="16" fill="#1f2328">inclusionAI/Avernet</text>
+<rect x="292" y="240" width="280" height="24" rx="5" fill="#0969da"/>
+<text x="971" y="258" text-anchor="end" font-size="16" font-weight="600" fill="#1f2328">1</text>
+<text x="28" y="302" font-size="16" fill="#1f2328">sgl-project/sglang</text>
+<rect x="292" y="284" width="280" height="24" rx="5" fill="#0969da"/>
+<text x="971" y="302" text-anchor="end" font-size="16" font-weight="600" fill="#1f2328">1</text>
+<text x="28" y="346" font-size="16" fill="#1f2328">sgl-project/SpecForge</text>
+<rect x="292" y="328" width="280" height="24" rx="5" fill="#0969da"/>
+<text x="971" y="346" text-anchor="end" font-size="16" font-weight="600" fill="#1f2328">1</text>
+</g>
+</svg>

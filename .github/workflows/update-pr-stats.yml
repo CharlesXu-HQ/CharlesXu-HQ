@@ -1,4 +1,4 @@
-name: Update open-source PR counts
+name: Update open-source PR chart
 
 on:
   push:
@@ -21,7 +21,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: main
-      - name: Update README
+      - name: Update chart
         env:
           GITHUB_TOKEN: ${{ github.token }}
         run: python3 scripts/update_pr_stats.py
@@ -29,13 +29,13 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          if git diff --quiet -- README.md; then
+          if git diff --quiet -- assets/open-source-prs-light.svg assets/open-source-prs-dark.svg; then
             # Keep public scheduled workflows active after long periods without PR changes.
             age_seconds=$(($(date +%s) - $(git log -1 --format=%ct)))
             if [ "$age_seconds" -lt 2592000 ]; then exit 0; fi
-            git commit --allow-empty -m "Keep PR stats schedule active"
+            git commit --allow-empty -m "Keep PR chart schedule active"
           else
-            git add README.md
-            git commit -m "Update open-source PR counts"
+            git add assets/open-source-prs-light.svg assets/open-source-prs-dark.svg
+            git commit -m "Update open-source PR chart"
           fi
           git push origin HEAD:main
