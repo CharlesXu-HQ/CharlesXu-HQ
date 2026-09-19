@@ -1,0 +1,41 @@
+name: Update open-source PR counts
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: '7,22,37,52 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: profile-pr-stats
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Update README
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 scripts/update_pr_stats.py
+      - name: Commit if needed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git diff --quiet -- README.md; then
+            # Keep public scheduled workflows active after long periods without PR changes.
+            age_seconds=$(($(date +%s) - $(git log -1 --format=%ct)))
+            if [ "$age_seconds" -lt 2592000 ]; then exit 0; fi
+            git commit --allow-empty -m "Keep PR stats schedule active"
+          else
+            git add README.md
+            git commit -m "Update open-source PR counts"
+          fi
+          git push origin HEAD:main
